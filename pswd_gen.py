@@ -64,10 +64,12 @@ root.resizable(False, False)
 
 # Widgets
 tk.Label(root, text="Password Length:",font=('Arial',12)).pack(pady=5)
+#Minimum length entry
 tk.Label(root, text="Minimum",font=('Arial',10)).pack(pady=1)
 length_entry_min = tk.Entry(root)
 length_entry_min.insert(0, "12")
 length_entry_min.pack()
+#Max length entry
 tk.Label(root, text="Maximum",font=('Arial',10)).pack(pady=5)
 length_entry_max = tk.Entry(root)
 length_entry_max.insert(0, "12")
@@ -99,5 +101,6 @@ password_var = tk.StringVar()
 tk.Entry(root, textvariable=password_var, font=("Helvetica", 12), justify="center", state="readonly").pack(pady=5)
 
 tk.Button(root, text="Copy to Clipboard", command=copy_to_clipboard,font=('Arial',12)).pack(pady=5)
+
 
 root.mainloop()
