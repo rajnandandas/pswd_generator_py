@@ -1,4 +1,4 @@
-# Random Password Generator (GUI)
+# RPG - Random Password Generator (GUI)
 
 A Python application with a GUI for generating strong, random passwords.  
 Options include uppercase, lowercase, numbers, and special characters.
