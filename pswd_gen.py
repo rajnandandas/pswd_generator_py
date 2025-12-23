@@ -2,6 +2,7 @@ import string
 import secrets
 import pyperclip
 import tkinter as tk
+from random import randint
 from tkinter import messagebox
 # Make sure pyperclip is installed
 
@@ -16,7 +17,10 @@ def generate_password():
     """
     
     try: 
-        length = int(length_entry.get())
+        length = randint(
+        int(length_entry_min.get()),
+        int(length_entry_max.get()))
+        
     except ValueError as e:
         messagebox.showerror("Error","Please enter a number.")
         return
@@ -55,14 +59,16 @@ def copy_to_clipboard():
 # GUI Setup
 root = tk.Tk()
 root.title("RPG - Random Password Generator")
-root.geometry("400x350")
+root.geometry("400x450")
 root.resizable(False, False)
 
 # Widgets
 tk.Label(root, text="Password Length:",font=('Arial',12)).pack(pady=5)
+tk.Label(root, text="Minimum",font=('Arial',10)).pack(pady=1)
 length_entry_min = tk.Entry(root)
 length_entry_min.insert(0, "12")
 length_entry_min.pack()
+tk.Label(root, text="Maximum",font=('Arial',10)).pack(pady=5)
 length_entry_max = tk.Entry(root)
 length_entry_max.insert(0, "12")
 length_entry_max.pack()
